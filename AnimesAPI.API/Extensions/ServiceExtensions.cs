@@ -10,7 +10,7 @@ namespace AnimesAPI.API.Extensions
         public static void AddContext(this IServiceCollection services, IConfiguration configuration)
         {
             #region Connection
-            string variable = configuration.GetConnectionString("NOVO_SGP_HOMOLOG") ?? throw new Exception($"Nenhuma conexão foi definida.");
+            string variable = configuration.GetConnectionString("ANIME_CONNECTION_STRING") ?? throw new Exception($"Nenhuma conexão foi definida.");
             string connection = Environment.GetEnvironmentVariable(variable) ?? throw new Exception($"Erro ao recuperar a variável de conexão ao banco de dados.");
 
             services.AddDbContext<AnimesDBContext>(options => options.UseSqlServer(connection));
