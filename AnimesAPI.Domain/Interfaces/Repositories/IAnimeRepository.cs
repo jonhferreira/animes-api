@@ -9,7 +9,7 @@ namespace AnimesAPI.Domain.Interfaces.Repositories
 {
     public interface IAnimeRepository : IBaseRepository<Anime>
     {
-        Task SoftDelete(int id);
+        Task<Anime> SoftDelete(int id);
         Task<List<Anime>> Get(int id, string director, string name);
     }
 }
