@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AnimesAPI.Application\AnimesAPI.Application.csproj" />
     <ProjectReference Include="..\AnimesAPI.Infrastructure\AnimesAPI.Infrastructure.csproj" />
   </ItemGroup>
 

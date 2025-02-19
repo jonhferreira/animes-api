@@ -2,6 +2,7 @@
 using AnimesAPI.Infrastructure.Data.Context;
 using AnimesAPI.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AnimesAPI.API.Extensions
 {
@@ -21,11 +22,18 @@ namespace AnimesAPI.API.Extensions
         {
 
             AddRepository(builder);
+            AddMediate(builder);
         }
 
         private static void AddRepository(WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
+        }
+
+        private static void AddMediate(WebApplicationBuilder builder)
+        {
+            var myhandlers = AppDomain.CurrentDomain.Load("AnimesAPI.Application");
+            builder.Services.AddMediatR(c => c.RegisterServicesFromAssemblies(myhandlers));
         }
     }
 }
