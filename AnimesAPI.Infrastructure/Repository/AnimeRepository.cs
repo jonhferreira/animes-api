@@ -2,6 +2,7 @@
 using AnimesAPI.Domain.Interfaces.Repositories;
 using AnimesAPI.Infrastructure.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +20,16 @@ namespace AnimesAPI.Infrastructure.Repository
             _animeDbContext = context;
         }
 
-        public async Task<List<Anime>> Get(int id, string director, string name)
+        public async Task<List<Anime>> Get(int? id, string director, string name)
         {
-            var animes = await _animeDbContext.Animes.Where(a => a.Id == id || a.Director == director || a.Name == name).ToListAsync();
+            var query = _animeDbContext.Animes.AsQueryable();
 
-            if (animes.Count <= 0)
-            {
-                throw new InvalidOperationException("Anime not found");
-            }
+            query = query.Where(a =>
+            (id.HasValue && a.Id == id) ||
+            (!string.IsNullOrEmpty(director) && a.Director.Equals(director)) ||
+            (!string.IsNullOrEmpty(name) && a.Name.Equals(name)));
+
+            var animes = await query.ToListAsync();
 
             return animes;
         }
@@ -34,8 +37,8 @@ namespace AnimesAPI.Infrastructure.Repository
         public async Task<Anime> SoftDelete(int id)
         {
             var anime = await _animeDbContext.Animes.FindAsync(id);
-            
-            if(anime is null)
+
+            if (anime is null)
             {
                 throw new InvalidOperationException("Anime not found");
             }

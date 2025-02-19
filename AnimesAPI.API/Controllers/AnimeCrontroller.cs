@@ -67,7 +67,7 @@ namespace AnimesAPI.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> find(int id, string name, string director)
+        public async Task<IActionResult> find(int? id, string? name, string? director)
         {
             var query = new FindAnimesQuery() { Id=id, Name=name, Director=director };
             var anime = await _mediator.Send(query);

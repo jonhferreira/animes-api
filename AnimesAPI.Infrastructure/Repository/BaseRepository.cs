@@ -19,11 +19,11 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
     }
     public async Task<T> Create(T obj)
     {
-        if (obj is null)
+        if(obj is null)
         {
             throw new ArgumentNullException(nameof(obj));
         }
-
+        
         _context.Add(obj);
         await _context.SaveChangesAsync();
         return obj;
