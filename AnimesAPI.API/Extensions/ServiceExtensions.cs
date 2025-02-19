@@ -1,4 +1,6 @@
-﻿using AnimesAPI.Domain.Interfaces.Repositories;
+﻿using AnimesAPI.Application.DTO;
+using AnimesAPI.Domain.Interfaces.Abstractions;
+using AnimesAPI.Domain.Interfaces.Repositories;
 using AnimesAPI.Infrastructure.Data.Context;
 using AnimesAPI.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -23,11 +25,22 @@ namespace AnimesAPI.API.Extensions
 
             AddRepository(builder);
             AddMediate(builder);
+            AddTransient(builder);
         }
 
         private static void AddRepository(WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
+        }
+
+        public static void AddTransient(WebApplicationBuilder builder)
+        {
+            builder.Services.AddTransient<IErrorMessage, ErrorMessage>();
+            builder.Services.AddTransient<ISuccessMessage, SuccessfulMessage>();
+            builder.Services.AddTransient<MessageGet, MessageGet>();
+            builder.Services.AddTransient<MessagePost, MessagePost>();
+            builder.Services.AddTransient<MessageDelete, MessageDelete>();
+            builder.Services.AddTransient<MessageUpdate, MessageUpdate>();
         }
 
         private static void AddMediate(WebApplicationBuilder builder)
