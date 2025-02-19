@@ -1,4 +1,5 @@
-﻿using AnimesAPI.Domain.Entities;
+﻿using AnimesAPI.Application.DTO;
+using AnimesAPI.Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AnimesAPI.Application.Animes.Queries
 {
-    public class FindAnimesQuery:IRequest<List<Anime>>
+    public class FindAnimesQuery:IRequest<ApiResponse<List<Anime>>>
     {
         
         public int? Id {  get; set; }

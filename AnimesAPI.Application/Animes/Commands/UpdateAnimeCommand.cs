@@ -1,9 +1,10 @@
-﻿using AnimesAPI.Domain.Entities;
+﻿using AnimesAPI.Application.DTO;
+using AnimesAPI.Domain.Entities;
 using MediatR;
 
 namespace AnimesAPI.Application.Animes.Commands
 {
-    public class UpdateAnimeCommand : IRequest<Anime>
+    public class UpdateAnimeCommand : IRequest<ApiResponse<Anime>>
     {
         public int Id { get; set; }
         public string Name { get; set; }
