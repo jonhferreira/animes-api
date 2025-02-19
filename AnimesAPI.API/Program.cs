@@ -1,10 +1,15 @@
+using AnimesAPI.API.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddContext(builder.Configuration);
+builder.AddDependencies();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();

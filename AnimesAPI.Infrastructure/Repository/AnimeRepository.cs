@@ -31,7 +31,7 @@ namespace AnimesAPI.Infrastructure.Repository
             
             anime.IsDeleted = true;
 
-            _animeDbContext.SaveChanges
+            _animeDbContext.SaveChanges();
 
         }
     }
