@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace AnimesAPI.Infrastructure.Repository
 {
@@ -22,16 +23,27 @@ namespace AnimesAPI.Infrastructure.Repository
         {
             var animes = await _animeDbContext.Animes.Where(a => a.Id == id || a.Director == director || a.Name == name).ToListAsync();
 
+            if (animes.Count <= 0)
+            {
+                throw new InvalidOperationException("Anime not found");
+            }
+
             return animes;
         }
 
-        public async Task SoftDelete(int id)
+        public async Task<Anime> SoftDelete(int id)
         {
             var anime = await _animeDbContext.Animes.FindAsync(id);
             
-            anime.IsDeleted = true;
+            if(anime is null)
+            {
+                throw new InvalidOperationException("Anime not found");
+            }
 
-            _animeDbContext.SaveChanges();
+            anime.IsDeleted = true;
+            await _animeDbContext.SaveChangesAsync();
+
+            return anime;
 
         }
     }

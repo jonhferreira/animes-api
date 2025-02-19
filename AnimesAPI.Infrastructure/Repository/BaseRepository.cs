@@ -19,15 +19,29 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
     }
     public async Task<T> Create(T obj)
     {
+        if (obj is null)
+        {
+            throw new ArgumentNullException(nameof(obj));
+        }
+
         _context.Add(obj);
         await _context.SaveChangesAsync();
         return obj;
     }
 
-    public async Task Delete(T obj)
+    public async Task<T> Delete(int id)
     {
-        _context.Remove(obj);
+
+        var entity = await _context.Set<T>().FindAsync(id);
+
+        if (entity is null) 
+        {
+            throw new InvalidOperationException("Object not found");
+        }
+        _context.Remove(entity);
         await _context.SaveChangesAsync();
+
+        return entity;
     }
 
     public async Task<List<T>> GetAll()
@@ -37,9 +51,22 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
 
     public async Task<T> Update(T obj)
     {
+        if(obj is null)
+        {
+            throw new ArgumentNullException(nameof(obj));
+        }
+        
         _context.Entry(obj).State = EntityState.Modified;
         await _context.SaveChangesAsync();
 
         return obj;
+    }
+
+    public async Task<T> Get(int id)
+    {
+        var entity = await _context.Set<T>().FindAsync(id);
+
+        return entity;
+
     }
 }
