@@ -13,7 +13,7 @@ namespace AnimesAPI.Application.DTO
         {
             return $"{objeto} listado(a) com sucesso";
         }
-        public string Message200Mult(string objeto)
+        public virtual string Message200Mult(string objeto)
         {
             return $"{objeto} listados(as) com sucesso";
         }

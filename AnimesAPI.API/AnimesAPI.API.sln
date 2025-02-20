@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Application", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Infrastructure", "..\AnimesAPI.Infrastructure\AnimesAPI.Infrastructure.csproj", "{AF8EBC2B-FB8B-42F2-87ED-141B5FD9E46F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimesAPI.Test", "..\AnimesAPI.Test\AnimesAPI.Test.csproj", "{39D26F77-8814-4F11-820B-D94938392FAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AF8EBC2B-FB8B-42F2-87ED-141B5FD9E46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF8EBC2B-FB8B-42F2-87ED-141B5FD9E46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF8EBC2B-FB8B-42F2-87ED-141B5FD9E46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D26F77-8814-4F11-820B-D94938392FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D26F77-8814-4F11-820B-D94938392FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D26F77-8814-4F11-820B-D94938392FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D26F77-8814-4F11-820B-D94938392FAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
