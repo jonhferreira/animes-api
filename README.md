@@ -25,8 +25,8 @@ Antes de executar o projeto, certifique-se de ter instalado em sua máquina:
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-   cd nome-do-repositorio
+   git clone https://github.com/jonhferreira/animes-api.git
+   cd animes-api
 
 2. **Suba os Containers**:
 O projeto inclui um arquivo `docker-compose.yml` que configura a API e o banco de dados SQL Server. Para subir os containers, execute o seguinte comando:
