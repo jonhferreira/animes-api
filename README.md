@@ -60,6 +60,7 @@ Ou utilizando a string de conexão
    ```bash
    update-database
 Com isso as migrations serão executadas e seu banco estará pronto para os testes
+
 3.**Execute a Api**
 
 4. **Acessando a documentação da API**
