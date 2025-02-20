@@ -29,7 +29,8 @@ Antes de executar o projeto, certifique-se de ter instalado em sua máquina:
    cd animes-api
 
 2. **Suba os Containers**:
-O projeto inclui um arquivo `docker-compose.yml` que configura a API e o banco de dados SQL Server. Para subir os containers, execute o seguinte comando:
+   
+   O projeto inclui um arquivo `docker-compose.yml` que configura a API e o banco de dados SQL Server. Para subir os containers, execute o seguinte comando:
    ```bash
    docker-compose up --build
 
@@ -39,9 +40,9 @@ Após os containers estarem em execução, a API estará disponível localmente 
 
 ## Acessando o Banco de Dados
   O SQL Server estará disponível na porta 1433. Você pode conectar ao banco de dados usando as seguintes credenciais:
-  - **User: as
-  - **Pass: animeSenha123
-  - **Banco de Dados: animesdb
+  - **User:** as
+  - **Pass:** animeSenha123
+  - **Banco de Dados:** animesdb
 
 ### Observação
 Durante a execução dos containers, foi identificado um problema na comunicação entre a API e o banco de dados, que não pode ser solucionado no prazo determinado.
