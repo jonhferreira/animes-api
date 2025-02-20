@@ -49,7 +49,7 @@ Durante a execução dos containers, foi identificado um problema na comunicaç�
 Individualmente a Aplicação e o banco de dados funcionam corretamente porém a comunicação não se apresenta correta. Por conta disso é indicado a **execução local da API**
 
 ## Executando a API localmente
-Esses passos devem ser realizado após pelo menos o banco de dados está em execução no container, como apresentado anteriormente.
+Esses passos devem ser realizado após o banco de dados está em execução no container, como apresentado anteriormente.
 
 1. **Defina a string de conexão como variável de ambiente do sistema**
    ```bash
@@ -60,8 +60,8 @@ Ou utilizando a string de conexão
    ```bash
    update-database
 Com isso as migrations serão executadas e seu banco estará pronto para os testes
-
-3. **Acessando a documentação da API**
+3.**Execute a Api**
+4. **Acessando a documentação da API**
 A documentação Swagger da Api estará disponível no [link](http://localhost:5000/swagger)	
 
 
