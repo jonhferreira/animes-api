@@ -3,20 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.API", "AnimesAPI.API.csproj", "{B4AC5971-AE28-42B8-B420-644AEDE4FF64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.API", ".\AnimesAPI.API\AnimesAPI.API.csproj", "{B4AC5971-AE28-42B8-B420-644AEDE4FF64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Domain", "..\AnimesAPI.Domain\AnimesAPI.Domain.csproj", "{B4DD7B14-4E84-4349-BF39-CD46ECAE3C7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Domain", ".\AnimesAPI.Domain\AnimesAPI.Domain.csproj", "{B4DD7B14-4E84-4349-BF39-CD46ECAE3C7C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Application", "..\AnimesAPI.Application\AnimesAPI.Application.csproj", "{A88C60A5-EF26-4E63-891E-A9A670D397CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Application", ".\AnimesAPI.Application\AnimesAPI.Application.csproj", "{A88C60A5-EF26-4E63-891E-A9A670D397CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Infrastructure", "..\AnimesAPI.Infrastructure\AnimesAPI.Infrastructure.csproj", "{AF8EBC2B-FB8B-42F2-87ED-141B5FD9E46F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Infrastructure", ".\AnimesAPI.Infrastructure\AnimesAPI.Infrastructure.csproj", "{AF8EBC2B-FB8B-42F2-87ED-141B5FD9E46F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimesAPI.Test", "..\AnimesAPI.Test\AnimesAPI.Test.csproj", "{39D26F77-8814-4F11-820B-D94938392FAE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{C7C7275A-4DEB-49E9-9461-B38D86D4ED1B}"
-	ProjectSection(SolutionItems) = preProject
-		Dockerfile.txt = Dockerfile.txt
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimesAPI.Test", ".\AnimesAPI.Test\AnimesAPI.Test.csproj", "{39D26F77-8814-4F11-820B-D94938392FAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
