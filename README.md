@@ -28,13 +28,10 @@ Antes de executar o projeto, certifique-se de ter instalado em sua máquina:
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
    cd nome-do-repositorio
 
-
-2. **Suba os Containers
-
+2. **Suba os Containers**:
 O projeto inclui um arquivo `docker-compose.yml` que configura a API e o banco de dados SQL Server. Para subir os containers, execute o seguinte comando:
-
-```bash
-docker-compose up --build
+   ```bash
+   docker-compose up --build
 
 ## Acessando a API
 
@@ -53,18 +50,20 @@ Individualmente a Aplicação e o banco de dados funcionam corretamente porém a
 ## Executando a API localmente
 Esses passos devem ser realizado após pelo menos o banco de dados está em execução no container, como apresentado anteriormente.
 
-1. **Defina a string de conexão como variável de ambiente do sistema
-```bash
-Server=localhost,1433;Database=animesdb;User ID=sa;Password=animeSenha123;TrustServerCertificate=True;
+1. **Defina a string de conexão como variável de ambiente do sistema**
+   ```bash
+   Server=localhost,1433;Database=animesdb;User ID=sa;Password=animeSenha123;TrustServerCertificate=True;
 
-2. **No Visual Studio acesse  **Ferramentas->Gerenciador de Pacotes do Nuget->Console de Gerenciador de Pacotes** e digite
+2. **No Visual Studio acesse**  **Ferramentas->Gerenciador de Pacotes do Nuget->Console de Gerenciador de Pacotes** e digite
 Ou utilizando a string de conexão
-```bash
-update-database
+   ```bash
+   update-database
 Com isso as migrations serão executadas e seu banco estará pronto para os testes
 
-3. **Acessando a documentação da API
+3. **Acessando a documentação da API**
 A documentação Swagger da Api estará disponível no [link](http://localhost:5000/swagger)	
+
+
 
 
 
