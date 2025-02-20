@@ -56,9 +56,9 @@ Esses passos devem ser realizado após o banco de dados está em execução no c
    Server=localhost,1433;Database=animesdb;User ID=sa;Password=animeSenha123;TrustServerCertificate=True;
 
 2. **No Visual Studio acesse**  **Ferramentas->Gerenciador de Pacotes do Nuget->Console de Gerenciador de Pacotes** e digite
-Ou utilizando a string de conexão
    ```bash
    update-database
+
 Com isso as migrations serão executadas e seu banco estará pronto para os testes
 
 3.**Execute a Api**
