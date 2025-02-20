@@ -58,13 +58,12 @@ Esses passos devem ser realizado após o banco de dados está em execução no c
 2. **No Visual Studio acesse**  **Ferramentas->Gerenciador de Pacotes do Nuget->Console de Gerenciador de Pacotes** e digite
    ```bash
    update-database
-
 Com isso as migrations serão executadas e seu banco estará pronto para os testes
 
-3.**Execute a Api**
+3. **Execute a Api**
 
 4. **Acessando a documentação da API**
-A documentação Swagger da Api estará disponível no [link](http://localhost:5000/swagger)	
+   A documentação Swagger da Api estará disponível no [link](http://localhost:5000/swagger)	
 
 
 
