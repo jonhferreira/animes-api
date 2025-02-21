@@ -28,7 +28,7 @@ RUN dotnet build "AnimesAPI.API.csproj" -c Release -o /app/build
 # Publique a aplicação
 RUN dotnet publish "AnimesAPI.API.csproj" -c Release -o /app/publish
 
-#RUN dotnet ef database update --project AnimesAPI.API.csproj
+RUN dotnet ef database update --project ../AnimesAPI.Infrastructure/AnimesAPI.Infrastructure.csproj
 
 # Usa a imagem oficial do .NET para rodar a aplicação
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
