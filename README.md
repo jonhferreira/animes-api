@@ -38,33 +38,9 @@ Antes de executar o projeto, certifique-se de ter instalado em sua máquina:
 
 Após os containers estarem em execução, a API estará disponível localmente pelo [link](http://localhost:5000)
 
-## Acessando o Banco de Dados
-  O SQL Server estará disponível na porta 1433. Você pode conectar ao banco de dados usando as seguintes credenciais:
-  - **User:** as
-  - **Pass:** animeSenha123
-  - **Banco de Dados:** animesdb
+## Acessando a documentação da API
 
-### Observação
-Durante a execução dos containers, foi identificado um problema na comunicação entre a API e o banco de dados, que não pode ser solucionado no prazo determinado.
-Individualmente a Aplicação e o banco de dados funcionam corretamente porém a comunicação não se apresenta correta. Por conta disso é indicado a **execução local da API**
-
-## Executando a API localmente
-Esses passos devem ser realizado após o banco de dados está em execução no container, como apresentado anteriormente.
-
-1. **Defina a string de conexão como variável de ambiente do sistema**
-   ```bash
-   Server=localhost,1433;Database=animesdb;User ID=sa;Password=animeSenha123;TrustServerCertificate=True;
-
-2. **No Visual Studio acesse**  **Ferramentas->Gerenciador de Pacotes do Nuget->Console de Gerenciador de Pacotes** e digite
-   ```bash
-   update-database
-Com isso as migrations serão executadas e seu banco estará pronto para os testes
-
-3. **Execute a Api**
-
-4. **Acessando a documentação da API**
-   
-   A documentação Swagger da Api estará disponível no [link](http://localhost:5000/swagger)	
+A documentação Swagger da Api estará disponível no [link](http://localhost:5000/swagger)	
 
 
 
