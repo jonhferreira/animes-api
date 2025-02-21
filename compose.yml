@@ -15,7 +15,7 @@ services:
       dockerfile: Dockerfile
     container_name: AnimeApi
     environment:
-      - ANIMES_BANCO=Server=sqlserver,1433;Database=animesdb;User ID=sa;Password=animeSenha123;
+      - ANIMES_BANCO=Server=sqlserver,1433;Database=animesdb;User ID=sa;Password=animeSenha123;TrustServerCertificate=True;
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "5000:8080"

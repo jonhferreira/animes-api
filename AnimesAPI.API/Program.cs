@@ -11,7 +11,6 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddContext(builder.Configuration);
 builder.AddDependencies();
 builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -19,6 +18,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+    await serviceProvider.SeedAsync();
 }
 
 app.UseHttpsRedirection();
