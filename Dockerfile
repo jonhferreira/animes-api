@@ -15,12 +15,6 @@ RUN dotnet restore "AnimesAPI.API/AnimesAPI.API.csproj"
 # Copia todo o código fonte
 COPY . .
 
-#Instala a tool dotnet ef
-RUN dotnet tool install --global dotnet-ef
-
-# Adiciona o dotnet-ef ao PATH
-ENV PATH="$PATH:/root/.dotnet/tools"
-
 # Compila a aplicação
 WORKDIR "/src/AnimesAPI.API"
 RUN dotnet build "AnimesAPI.API.csproj" -c Release -o /app/build
@@ -28,7 +22,6 @@ RUN dotnet build "AnimesAPI.API.csproj" -c Release -o /app/build
 # Publique a aplicação
 RUN dotnet publish "AnimesAPI.API.csproj" -c Release -o /app/publish
 
-#RUN dotnet ef database update --project ../AnimesAPI.Infrastructure/AnimesAPI.Infrastructure.csproj
 
 # Usa a imagem oficial do .NET para rodar a aplicação
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
